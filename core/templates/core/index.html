@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Home</li>
+{% endblock breadcrumb%}
+
+{% block content %}
+<div class="container-fluid">
+  <div id="ui-view" style="opacity: 1;"><div class="animated fadeIn">
+    <div class="row">
+    <div class="col-12">
+      <div class="card">
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i>
+      </div>
+      <div class="card-body">
+        <div class="jumbotron bg-white">
+          <h1 class="display-4">A SATISFIED CUSTOMER IS THE BEST BUSINESS STARATEGY OF ALL.</h1>
+          <p class="lead">Welcome to the Project Manager</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'register:new-company' %}" role="button">Add your company and start manage</a>
+          </p>
+          {% if not user.is_authenticated %}
+          <a href="{% url 'core:login' %}">do you have account?</a>
+          {% endif %}
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
